@@ -13,7 +13,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        generaDatosPeli()
         iniRpelis()
 
     }//Fin onCreate
@@ -27,12 +26,14 @@ class MainActivity : AppCompatActivity() {
         lista.add(Pelicula(R.drawable.movies5, "Título 5", "Género 5", 4.5,"Detalle 5"))
 
         return lista
+
     }//End fun generaDatosPeli
 
     public fun iniRpelis(){
         val rvPelis = findViewById<RecyclerView>(R.id.gPelis)
         rvPelis.layoutManager = LinearLayoutManager(this)
         rvPelis.adapter = Adapter(generaDatosPeli(),this)
+
     }//End fun iniRpelis
 
 
